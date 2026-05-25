@@ -8,10 +8,7 @@ import { IconLoader } from '@components/icons';
 const StyledLoader = styled.div`
   ${({ theme }) => theme.mixins.flexCenter};
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  inset: 0;
   width: 100%;
   height: 100%;
   background-color: var(--dark-navy);
@@ -19,17 +16,18 @@ const StyledLoader = styled.div`
 
   .logo-wrapper {
     width: max-content;
-    max-width: 100px;
+    max-width: 110px;
+    opacity: ${({ isMounted }) => (isMounted ? 1 : 0)};
     transition: var(--transition);
-    opacity: ${props => (props.isMounted ? 1 : 0)};
+
     svg {
-      display: block;
       width: 100%;
       height: 100%;
-      margin: 0 auto;
+      display: block;
       fill: none;
       user-select: none;
-      #B {
+
+      #ZH {
         opacity: 0;
       }
     }
@@ -39,36 +37,36 @@ const StyledLoader = styled.div`
 const Loader = ({ finishLoading }) => {
   const [isMounted, setIsMounted] = useState(false);
 
-  const animate = () => {
-    const loader = anime.timeline({
+  const animateLoader = () => {
+    const timeline = anime.timeline({
       complete: () => finishLoading(),
     });
 
-    loader
+    timeline
       .add({
         targets: '#logo path',
-        delay: 300,
-        duration: 1500,
+        delay: 250,
+        duration: 1400,
         easing: 'easeInOutQuart',
         strokeDashoffset: [anime.setDashoffset, 0],
       })
       .add({
-        targets: '#logo #B',
-        duration: 700,
+        targets: '#logo #ZH',
+        duration: 600,
         easing: 'easeInOutQuart',
         opacity: 1,
       })
       .add({
         targets: '#logo',
-        delay: 500,
-        duration: 300,
+        delay: 400,
+        duration: 350,
         easing: 'easeInOutQuart',
         opacity: 0,
-        scale: 0.1,
+        scale: 0.15,
       })
       .add({
         targets: '.loader',
-        duration: 200,
+        duration: 250,
         easing: 'easeInOutQuart',
         opacity: 0,
         zIndex: -1,
@@ -76,14 +74,18 @@ const Loader = ({ finishLoading }) => {
   };
 
   useEffect(() => {
-    const timeout = setTimeout(() => setIsMounted(true), 10);
-    animate();
+    const timeout = setTimeout(() => {
+      setIsMounted(true);
+    }, 10);
+
+    animateLoader();
+
     return () => clearTimeout(timeout);
   }, []);
 
   return (
     <StyledLoader className="loader" isMounted={isMounted}>
-      <Helmet bodyAttributes={{ class: `hidden` }} />
+      <Helmet bodyAttributes={{ class: 'hidden' }} />
 
       <div className="logo-wrapper">
         <IconLoader />

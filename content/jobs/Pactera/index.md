@@ -4,7 +4,7 @@ title: 'Software Engineer Co-op'
 company: 'Pactera Technology'
 location: 'Shanghai, China'
 range: 'Jul 2021 – Oct 2023 '
-# url: 'https://starry.com/'
+url: 'https://starry.com/'
 ---
 
 - Developed cross-platform mobile UI components using React Native
