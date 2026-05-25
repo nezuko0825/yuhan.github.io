@@ -286,12 +286,12 @@ const Jobs = () => {
                     hidden={activeTabId !== i}>
                     <h3>
                       <span>{title}</span>
-                      <span className="company">
+                      {/* <span className="company">
                         &nbsp;@&nbsp;
                         <a href={url} className="inline-link">
                           {company}
                         </a>
-                      </span>
+                      </span> */}
                     </h3>
 
                     <p className="range">{range}</p>
