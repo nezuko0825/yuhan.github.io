@@ -12,6 +12,9 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     width: 100%;
     scroll-behavior: smooth;
+    /* Prevent scroll jank */
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   *,
@@ -79,6 +82,8 @@ const GlobalStyle = createGlobalStyle`
     font-family: var(--font-sans);
     font-size: var(--fz-xl);
     line-height: 1.3;
+    /* Prevent layout shifts */
+    overflow-y: scroll;
 
     @media (max-width: 480px) {
       font-size: var(--fz-lg);
@@ -109,6 +114,13 @@ const GlobalStyle = createGlobalStyle`
     display: grid;
     grid-template-rows: 1fr auto;
     grid-template-columns: 100%;
+    /* Improve animation performance */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    -moz-transform: translateZ(0);
   }
 
   main {
