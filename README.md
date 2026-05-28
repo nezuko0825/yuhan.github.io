@@ -19,9 +19,9 @@
   </a>
 </p> -->
 
-![demo](https://raw.githubusercontent.com/bchiang7/v4/main/src/images/demo.png)
+<!-- ![demo](https://raw.githubusercontent.com/bchiang7/v4/main/src/images/demo.png) -->
 
-## 🚨 Forking this repo (please read!)
+<!-- ## 🚨 Forking this repo (please read!)
 
 Many people have contacted me asking me if they can use this code for their own website, and the answer to that question is usually **yes, with attribution**.
 
@@ -31,7 +31,7 @@ Please also note that I did not build this site with the intention of it being a
 
 ### TL;DR
 
-Yes, you can fork this repo. Please give me proper credit by linking back to [brittanychiang.com](https://brittanychiang.com). Thanks!
+Yes, you can fork this repo. Please give me proper credit by linking back to [brittanychiang.com](https://brittanychiang.com). Thanks! -->
 
 ## 🛠 Installation & Set Up
 
