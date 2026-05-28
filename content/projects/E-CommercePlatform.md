@@ -10,7 +10,7 @@ tech:
   - Docker
   - Figma
 company: ''
-showInProjects: true
+showInProjects: false
 ---
 Improved product loading speed by 40% and built scalable API system
 

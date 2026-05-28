@@ -10,7 +10,7 @@ tech:
   - REST API
   - System Debugging
 company: 'Apple'
-showInProjects: true
+showInProjects: false
 ---
 
 Improved backend stability and reduced recurring data-processing errors under high load
